@@ -52,161 +52,166 @@ class HomeView extends GetView<HomeController> {
             ],
           ),
         ),
-        body: 
-        ListView.builder(
-        itemCount: products.length,
-        itemBuilder: (context, index) {
-          return ListTile(
-            leading:Image.asset(products[index].image),
-            title: Text(products[index].name),
-            subtitle: Text('${products[index].price.toString()} руб'),
-          );
-        },
-      ),
-        // body: Column(
-        //   children: <Widget>[
-        //     SizedBox(
-        //       height: 50,
-        //       child: ListView(
-        //         scrollDirection: Axis.horizontal,
-        //         children: <Widget>[
-        //           Expanded(
-        //             child: TextButton(
-        //               onPressed: () {
-        //                 // Действие при выборе "Новинки"
-        //               },
-        //               child: const Text(
-        //                 'Новинки',
-        //                 style: TextStyle(
-        //                     color: Color.fromARGB(255, 106, 106, 106)),
-        //               ),
-        //             ),
-        //           ),
-        //           Expanded(
-        //             child: TextButton(
-        //               onPressed: () {
-        //                 // Действие при выборе "Популярное"
-        //               },
-        //               child: const Text(
-        //                 'Популярное',
-        //                 style: TextStyle(
-        //                     color: Color.fromARGB(255, 106, 106, 106)),
-        //               ),
-        //             ),
-        //           ),
-        //           Expanded(
-        //             child: TextButton(
-        //               onPressed: () {
-        //                 // Действие при выборе "Напитки"
-        //               },
-        //               child: const Text(
-        //                 'Напитки',
-        //                 style: TextStyle(
-        //                     color: Color.fromARGB(255, 106, 106, 106)),
-        //               ),
-        //             ),
-        //           ),
-        //           Expanded(
-        //             child: TextButton(
-        //               onPressed: () {
-        //                 // Действие при выборе "Супер Бокс"
-        //               },
-        //               child: const Text(
-        //                 'Супер Бокс',
-        //                 style: TextStyle(
-        //                     color: Color.fromARGB(255, 106, 106, 106)),
-        //               ),
-        //             ),
-        //           ),
-        //           Expanded(
-        //             child: TextButton(
-        //               onPressed: () {
-        //                 // Действие при выборе "Комбо Обед"
-        //               },
-        //               child: const Text(
-        //                 'Комбо Обед',
-        //                 style: TextStyle(
-        //                     color: Color.fromARGB(255, 106, 106, 106)),
-        //               ),
-        //             ),
-        //           ),
-        //           Expanded(
-        //             child: TextButton(
-        //               onPressed: () {
-        //                 // Действие при выборе "Бургеры и роллы"
-        //               },
-        //               child: const Text(
-        //                 'Бургеры и роллы',
-        //                 style: TextStyle(
-        //                     color: Color.fromARGB(255, 106, 106, 106)),
-        //               ),
-        //             ),
-        //           ),
-        //           Expanded(
-        //             child: TextButton(
-        //               onPressed: () {
-        //                 // Действие при выборе "Картофель, стартеры и салаты"
-        //               },
-        //               child: const Text(
-        //                 'Картофель, стартеры и салаты',
-        //                 style: TextStyle(
-        //                     color: Color.fromARGB(255, 106, 106, 106)),
-        //               ),
-        //             ),
-        //           ),
-        //           Expanded(
-        //             child: TextButton(
-        //               onPressed: () {
-        //                 // Действие при выборе "Завтрак"
-        //               },
-        //               child: const Text(
-        //                 'Завтрак',
-        //                 style: TextStyle(
-        //                     color: Color.fromARGB(255, 106, 106, 106)),
-        //               ),
-        //             ),
-        //           ),
-        //           Expanded(
-        //             child: TextButton(
-        //               onPressed: () {
-        //                 // Действие при выборе "Кидз Комбо"
-        //               },
-        //               child: const Text(
-        //                 'Кидз Комбо',
-        //                 style: TextStyle(
-        //                     color: Color.fromARGB(255, 106, 106, 106)),
-        //               ),
-        //             ),
-        //           ),
-        //           Expanded(
-        //             child: TextButton(
-        //               onPressed: () {
-        //                 // Действие при выборе "Десерты"
-        //               },
-        //               child: const Text(
-        //                 'Десерты',
-        //                 style: TextStyle(
-        //                     color: Color.fromARGB(255, 106, 106, 106)),
-        //               ),
-        //             ),
-        //           ),
-        //           Expanded(
-        //             child: TextButton(
-        //               onPressed: () {
-        //                 // Действие при выборе "Соусы и другое"
-        //               },
-        //               child: const Text(
-        //                 'Соусы и другое',
-        //                 style: TextStyle(
-        //                     color: Color.fromARGB(255, 106, 106, 106)),
-        //               ),
-        //             ),
-        //           ),
-        //         ],
-        //       ),
-        //     ),
-        //   ],
-        // )
-        );
+        body: Stack(children: [
+          Container(
+            child: Column(
+              children: <Widget>[
+                SizedBox(
+                  height: 50,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: <Widget>[
+                      Expanded(
+                        child: TextButton(
+                          onPressed: () {
+                            // Действие при выборе "Новинки"
+                          },
+                          child: const Text(
+                            'Новинки',
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 106, 106, 106)),
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: TextButton(
+                          onPressed: () {
+                            // Действие при выборе "Популярное"
+                          },
+                          child: const Text(
+                            'Популярное',
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 106, 106, 106)),
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: TextButton(
+                          onPressed: () {
+                            // Действие при выборе "Напитки"
+                          },
+                          child: const Text(
+                            'Напитки',
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 106, 106, 106)),
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: TextButton(
+                          onPressed: () {
+                            // Действие при выборе "Супер Бокс"
+                          },
+                          child: const Text(
+                            'Супер Бокс',
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 106, 106, 106)),
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: TextButton(
+                          onPressed: () {
+                            // Действие при выборе "Комбо Обед"
+                          },
+                          child: const Text(
+                            'Комбо Обед',
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 106, 106, 106)),
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: TextButton(
+                          onPressed: () {
+                            // Действие при выборе "Бургеры и роллы"
+                          },
+                          child: const Text(
+                            'Бургеры и роллы',
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 106, 106, 106)),
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: TextButton(
+                          onPressed: () {
+                            // Действие при выборе "Картофель, стартеры и салаты"
+                          },
+                          child: const Text(
+                            'Картофель, стартеры и салаты',
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 106, 106, 106)),
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: TextButton(
+                          onPressed: () {
+                            // Действие при выборе "Завтрак"
+                          },
+                          child: const Text(
+                            'Завтрак',
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 106, 106, 106)),
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: TextButton(
+                          onPressed: () {
+                            // Действие при выборе "Кидз Комбо"
+                          },
+                          child: const Text(
+                            'Кидз Комбо',
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 106, 106, 106)),
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: TextButton(
+                          onPressed: () {
+                            // Действие при выборе "Десерты"
+                          },
+                          child: const Text(
+                            'Десерты',
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 106, 106, 106)),
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: TextButton(
+                          onPressed: () {
+                            // Действие при выборе "Соусы и другое"
+                          },
+                          child: const Text(
+                            'Соусы и другое',
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 106, 106, 106)),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+          
+          SizedBox(
+            child: ListView.builder(
+              itemCount: products.length,
+              itemBuilder: (context, index) {
+                return ListTile(
+                  leading: Image.asset(products[index].image),
+                  title: Text(products[index].name),
+                  subtitle: Text('${products[index].price.toString()} руб'),
+                );
+              },
+            ),
+          ),
+        ]));
   }
 }
