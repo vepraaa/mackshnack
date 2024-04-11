@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mackshnack/app/models/product/product.dart';
 
+final CartService cartService = CartService();
 class CartService {
   List<Product> _cartItems = [];
 

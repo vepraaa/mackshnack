@@ -152,7 +152,7 @@ List<Product> products = [
     Product(
         name: 'Биг Спешиал Ролл Комбо',
         price: 355,
-        image: 'assets/images/kombobigspeshialroll.png',
+        image: 'assets/images/kombobigspecialroll.png',
         category: 'Kombo'),
     Product(
         name: 'Цезарь Ролл Комбо',

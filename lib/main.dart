@@ -177,8 +177,6 @@ class GetMaterialApp extends StatelessWidget {
     return MaterialApp(
       title: "MackShnack",
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       debugShowCheckedModeBanner: false,
       home: HomeView(),

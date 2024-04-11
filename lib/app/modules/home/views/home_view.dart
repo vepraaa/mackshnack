@@ -4,9 +4,13 @@ import '../controllers/home_controller.dart';
 import 'package:mackshnack/app/models/product/product.dart';
 import 'package:mackshnack/app/models/productwidget/productwidget.dart';
 import 'package:mackshnack/main.dart';
+import 'package:mackshnack/app/services/cart_service.dart';
+
+final CartService cartService = CartService();
 
 class HomeView extends GetView<HomeController> {
   const HomeView({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     // Map<String, List<Product>> productMap = Map();
@@ -199,17 +203,66 @@ class HomeView extends GetView<HomeController> {
               ],
             ),
           ),
-          
           SizedBox(
-            child: ListView.builder(
-              itemCount: products.length,
-              itemBuilder: (context, index) {
-                return ListTile(
-                  leading: Image.asset(products[index].image),
-                  title: Text(products[index].name),
-                  subtitle: Text('${products[index].price.toString()} руб'),
-                );
-              },
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: GridView.builder(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2, // Устанавливаем количество ячеек в строке
+                  mainAxisSpacing:
+                      8, // Устанавливаем вертикальный отступ между ячейками
+                  crossAxisSpacing:
+                      8, // Устанавливаем горизонтальный отступ между ячейками
+                ),
+                itemCount: products.length,
+                itemBuilder: (context, index) {
+                  return Card(
+                      elevation: 4, // добавляем тень для карточки
+                      margin: EdgeInsets.all(2), // добавляем внешние отступы
+                      child: Column(
+                        children: [
+                          Image.asset(
+                            products[index].image,
+                            width: 100,
+                            height: 100,
+                          ),
+                          Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(children: [
+                                Text(
+                                  products[index].name,
+                                  style: TextStyle(),
+                                  textAlign: TextAlign.center,
+                                ),
+                                const SizedBox(height: 4),
+                                Text(
+                                  '${products[index].price.toString()} руб',
+                                  style: TextStyle(),
+                                  textAlign: TextAlign.center,
+                                ),
+                                Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      IconButton(
+                                        icon: const Icon(
+                                          Icons.add_box,
+                                          color: Color.fromRGBO(245, 127, 23, 1),
+                                        ),
+                                        
+                                        onPressed: () {
+                                          cartService.addToCart(Product(
+                                              name: '',
+                                              image: '',
+                                              price: 0,
+                                              category: ''));
+                                        },
+                                      ),
+                                    ])
+                              ])),
+                        ],
+                      ));
+                },
+              ),
             ),
           ),
         ]));
