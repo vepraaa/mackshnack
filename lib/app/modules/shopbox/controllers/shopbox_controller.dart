@@ -1,23 +1,22 @@
-import 'package:get/get.dart';
+import 'package:mackshnack/app/models/product/product.dart';
+import 'package:mackshnack/app/services/cart_service.dart';
+class ShopBoxController {
+  final CartService cartService = CartService();
 
-class ShopboxController extends GetxController {
-  //TODO: Implement ShopboxController
-
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  void addToCart(Product product) {
+    cartService.addToCart(product);
   }
 
-  @override
-  void onReady() {
-    super.onReady();
+
+  void clearCart() {
+    cartService.clearCart();
   }
 
-  @override
-  void onClose() {
-    super.onClose();
+  List<Product> getCartItems() {
+    return cartService.getCartItems();
   }
 
-  void increment() => count.value++;
+  double getTotalPrice() {
+    return cartService.getTotalPrice();
+  }
 }

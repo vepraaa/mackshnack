@@ -1,7 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:mackshnack/app/models/product/product.dart';
 
-final CartService cartService = CartService();
 class CartService {
   List<Product> _cartItems = [];
 
@@ -9,15 +7,16 @@ class CartService {
     _cartItems.add(product);
   }
 
+
+  void clearCart() {
+    _cartItems.clear();
+  }
+
   List<Product> getCartItems() {
-    return _cartItems;
+    return List.unmodifiable(_cartItems);
   }
 
   double getTotalPrice() {
-    double total = 0;
-    for (var item in _cartItems) {
-      total += item.price;
-    }
-    return total;
+    return _cartItems.fold(0, (sum, item) => sum + item.price);
   }
 }

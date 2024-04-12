@@ -1,12 +1,12 @@
-import 'package:get/get.dart';
+// import 'package:get/get.dart';
 
-import '../controllers/shopbox_controller.dart';
+// import '../controllers/shopbox_controller.dart';
 
-class ShopboxBinding extends Bindings {
-  @override
-  void dependencies() {
-    Get.lazyPut<ShopboxController>(
-      () => ShopboxController(),
-    );
-  }
-}
+// class ShopBoxBinding extends Bindings {
+//   @override
+//   void dependencies() {
+//     Get.lazyPut<ShopBoxController>(
+//       () => ShopBoxController(),
+//     );
+//   }
+// }
