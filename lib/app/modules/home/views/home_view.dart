@@ -1,8 +1,9 @@
+// ignore_for_file: prefer_const_constructors, sort_child_properties_last, use_key_in_widget_constructors
+
 import 'package:flutter/material.dart';
 import 'package:mackshnack/app/modules/shopbox/controllers/shopbox_controller.dart';
 import 'package:mackshnack/app/modules/shoppage/views/shoppage_view.dart';
 import '../controllers/home_controller.dart';
-import 'package:mackshnack/main.dart';
 
 class HomePage extends StatelessWidget {
   final HomeController homeController = HomeController();

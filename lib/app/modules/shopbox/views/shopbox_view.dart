@@ -1,6 +1,7 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_constructors_in_immutables, use_key_in_widget_constructors
+
 import 'package:flutter/material.dart';
 
-import 'package:get/get.dart';
 
 import '../controllers/shopbox_controller.dart';
 import 'package:mackshnack/app/services/cart_service.dart';
@@ -52,13 +53,6 @@ class ShopBoxView extends StatelessWidget {
                 ),
                 title: Text(product.name),
                 subtitle: Text('${product.price.toStringAsFixed(0)} руб'),
-                // trailing: IconButton(
-                //   icon: Icon(Icons.delete),
-                //   onPressed: () {
-                //     shopBoxController.removeFromCart(product);
-                //     Navigator.pop(context); // обновляем текущий экран
-                //   },
-                // ),
               ),
               Divider(
                 color: Colors.grey,
